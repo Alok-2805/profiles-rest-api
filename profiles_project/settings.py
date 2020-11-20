@@ -25,7 +25,7 @@ SECRET_KEY = 'b6juwl+_o_tz+ly(=*814mdry6@sj-(v=afxskz1dv*dxt7&=l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -82,8 +82,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -124,3 +122,6 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL='profiles_api.UserProfile'
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
