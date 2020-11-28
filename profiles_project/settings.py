@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b6juwl+_o_tz+ly(=*814mdry6@sj-(v=afxskz1dv*dxt7&=l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 ALLOWED_HOSTS = ["*"]
 
@@ -125,3 +125,4 @@ AUTH_USER_MODEL='profiles_api.UserProfile'
 AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),
 )
+STATIC_ROOT = '/static/'
